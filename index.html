@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-A'la</title>
+    <link rel="stylesheet" type="text/css" href="stai.css">
+    <link rel="icon" href="image/mosque.png" type="image/png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <section id="nav-bar">
+        <header id="header">
+            <a href="#" class="logo">Al-A'la</a>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#location">Location</a></li>
+                <li><a href="#hall-reservation">Hall Reservation</a></li>
+                <li><a href="products.php">Hajj/Umrah Essentials</a></li>
+                <li><a href="prayer_times.html">Prayer Times</a></li>
+                <li><a href="#footer">Contact</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn"><i class="fa fa-user" aria-hidden="true"></i></a>
+                    <div class="dropdown-content">
+                        <a href="update_user.php">Profile</a>
+                        <a href="logout.php">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </header>
+    </section>
+
+    <style>
+        .sec a {
+            display: inline-block;
+            font-size: 14px; /* Smaller font size for the link */
+            padding: 5px 10px; /* Adjust padding */
+            margin-top: 10px;
+            text-decoration: none;
+            color: rgb(255, 255, 255); /* Text color */
+        }
+        .sec a p {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+        .play-btn {
+            width: 50px; /* Size of the play button image */
+            height: auto;
+            margin-right: 5px;
+        }
+
+        .sec p, .footer-box p {
+            text-align: justify;
+        }
+    </style>
+
+    <section id="scene">
+        <h2 id="text">Masjid Al-A'la</h2>
+        <img src="image/01.png" id="img1">
+        <img src="image/02.png" id="img2">
+        <img src="image/03.png" id="img3">
+        <img src="image/04.png" id="img4">
+    </section>
+    <div class="sec">
+        <h2>Masjid Al-A'la</h2>
+        <a href="vid.html">
+          <p><img src="images/ima.png" class="play-btn"> Click Here </p>
+        </a>
+        <p>Masjid Al-A'la, located in Jitra, Kubang Pasu, stands as a testament to architectural magnificence and 
+            spiritual significance. Inaugurated on the 8th of Rajab in the year 1405 Hijri, corresponding to the 
+            29th of March 1985, this grand mosque is a symbol of community strength and devotion. Its sprawling 
+            two-story structure can comfortably accommodate up to 8000 worshippers, making it a focal point for 
+            religious gatherings and communal prayers.
+
+        </br></br>The mosque's design is a harmonious blend of traditional Islamic architecture and modern aesthetics. 
+            The main building features a majestic dome that crowns the prayer hall, adding a touch of grandeur 
+            to the skyline. Adjacent to the main building stands a towering minaret, its elegant silhouette 
+            reaching towards the heavens, calling the faithful to prayer.
+            
+            </br></br>The mosque's surroundings are as impressive as its architecture. A spacious parking area welcomes 
+            visitors, ensuring convenience and accessibility. The landscape is meticulously designed, creating 
+            a serene and tranquil environment conducive to contemplation and prayer. Adequate ablution facilities 
+            are available, providing comfort to worshippers.
+            
+        </br></br>Inside, the mosque is a sight to behold. The minbar, crafted from stone and layers of brown marble, 
+            is a masterpiece of craftsmanship, adding to the mosque's splendor. The mihrab, beautifully adorned 
+            with layers of gray marble and inscribed with verses from the Quran, serves as a focal point for 
+            worshippers, guiding them in their prayers.
+            
+        </br></br>Masjid Al-A'la is not just a place of worship; it is a beacon of faith and community spirit. Its 
+            architectural beauty, coupled with its spiritual significance, makes it a cherished landmark in Jitra, 
+            Kubang Pasu, and a source of pride for the local community.</p>
+    </div>
+    <script>
+        let text = document.getElementById('text');
+        let img1 = document.getElementById('img1');
+        let img2 = document.getElementById('img2');
+        let img3 = document.getElementById('img3');
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            text.style.marginTop = value * -1.5+'px';
+            img1.style.top = value * 0.75+'px';
+            img2.style.top = value * 0.5+'px';
+            img3.style.top = value * 0.25+'px';
+        })
+    </script>
+
+    <!---------------------------------LOCATION------------------------------------------------->
+    <style>
+        #Map {
+            text-align: center; /* Center align the content within the section */
+        }
+
+        iframe {
+            width: 100%; /* Make the iframe fill its container */
+        }
+    </style>
+
+    <section id="location">
+        <div class="container">
+            <h1 class="title text-center">LOCATION</h1>
+            <div class="row">
+                <div class="col-md-8 offset-md-2"> <!-- Centered iframe in a larger column -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7931.945575697497!2d100.41162882065508!3d6.26730918578284!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304b5831f4df2051%3A0x2c173181adfd83bc!2sMasjid%20Al-A&#39;la!5e0!3m2!1sen!2smy!4v1716908832308!5m2!1sen!2smy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!---------------------------------HALL RESERVATION------------------------------------------------->
+    <style>
+        #hall-reservation {
+            background-color: #f8f9fa;
+            padding: 100px 0;
+        }
+        #hall-reservation .container {
+            text-align: center;
+        }
+        #hall-reservation h1 {
+            margin-bottom: 20px;
+            font-size: 36px;
+        }
+        #hall-reservation p {
+            margin-bottom: 40px;
+            font-size: 18px;
+        }
+        #hall-reservation .btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            transition: transform 0.3s ease;
+        }
+        #hall-reservation .btn.zoomed {
+            transform: scale(1.2);
+        }
+    </style>
+
+    <section id="hall-reservation">
+        <div class="container">
+            <h1>Hall Reservation</h1>
+            <p>Book our hall for your events and gatherings. Click the button below to learn more and make a reservation.</p>
+            <a href="hall.html" class="btn btn-primary" id="learn-more-btn">Learn More</a>
+        </div>
+    </section>
+
+    <script>
+        const learnMoreBtn = document.getElementById('learn-more-btn');
+
+        window.addEventListener('scroll', function() {
+            let scrollValue = window.scrollY;
+            if (scrollValue > 100) { // Adjust this value as needed
+                learnMoreBtn.classList.add('zoomed');
+            } else {
+                learnMoreBtn.classList.remove('zoomed');
+            }
+        });
+    </script>
+
+    <!---------------------------------Social Media------------------------------------------------->
+    <style>
+        #Social{
+            background: f8f9fa;
+            padding: 100px 0;
+        }
+
+        #Social p{
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .social-icons img{
+            width: 60px;
+            transition: 0.5s;
+        }
+
+        .social-icons a:hover img{
+            transform: translateY(-10px);
+        }
+    </style>
+
+    <section id="Social">
+        <div class="container text-center">
+            <p>CONTACT US</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/groups/1236963846417391/?mibextid=uJjRxr"><img src="images/f.jpg" class="rounded-circle"></a>
+                <a href="https://www.instagram.com/explore/locations/349110211/masjid-al-ala/"><img src="images/i.jpeg" class="rounded-circle"></a>
+                <a href="https://twitter.com/mrhfscyberjaya?lang=en"><img src="images/x.png" class="rounded-circle"></a>
+                <a href="https://www.pinterest.com/masjidalala/"><img src="images/p.png" class="rounded-circle"></a>
+                <a href="https://www.snapchat.com/explore/masjid"><img src="images/s.png" class="rounded-circle"></a>
+                <a href="https://www.youtube.com/channel/UCgL0-qSjMV79ZqNq-ULB_ZQ"><img src="images/y.png" class="rounded-circle"></a>
+            </div>
+        </div>
+    </section>
+
+    <!----------------------------------FOOTER------------------------------------------------>
+    <section id="footer">
+        <img src="image/wave2.png" class="footer-img">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 footer-box">
+                    <img src="image/mosque.png" class="rounded-circle">
+                    <p>To stay updated, join Al-A'la Community Now! Follow Us on social media!</p>
+                </div>
+                <div class="col-md-4 footer-box">
+                    <p><b>CONTACT US</b></p>
+                    <p><i class="fa fa-map-marker" aria-hidden="true"></i>Masjid Al-A'la, Jitra, Kedah</p>
+                    <p><i class="fa fa-phone" aria-hidden="true"></i>+6017 508 3527</p>
+                    <p><i class="fa fa-envelope-o" aria-hidden="true"></i>alalajitrakedah@gmail.com</p>
+                </div>
+                <div class="col-md-4 footer-box">
+                    <p><b>JOIN US NOW</b></p>
+                    <input type="email" class="form-control" placeholder="Your Email">
+                    <button type="button" class="btn btn-primary">Join</button>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Website by NUR AQIL NAJJAH BINTI RUZAIDI</p>
+        </div>
+    </section>
+
+    <!---------------Smooth Scroll----------------------------------------------------------->
+    <script src="smooth-scroll.js"></script>
+    <script>
+        var scroll = new SmoothScroll('a[href*="#"]');
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prayer Times</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prayer Times for Zone KDH01</h1>
+    <table id="prayerTimesTable">
+        <thead>
+            <tr>
+                <th>Day</th>
+                <th>Hijri Date</th>
+                <th>Fajr</th>
+                <th>Syuruk</th>
+                <th>Dhuhr</th>
+                <th>Asr</th>
+                <th>Maghrib</th>
+                <th>Isha</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script>
+        const apiUrl = 'https://api.waktusolat.app/v2/solat/kdh01';
+
+        // Function to format the Unix timestamp to readable time
+        function formatTime(unixTime) {
+            const date = new Date(unixTime * 1000);
+            const hours = date.getHours().toString().padStart(2, '0');
+            const minutes = date.getMinutes().toString().padStart(2, '0');
+            return `${hours}:${minutes}`;
+        }
+
+        // Function to populate the table with prayer times
+        async function populatePrayerTimes() {
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+
+                const tableBody = document.querySelector('#prayerTimesTable tbody');
+                data.prayers.forEach(prayer => {
+                    const row = document.createElement('tr');
+
+                    const dayCell = document.createElement('td');
+                    dayCell.textContent = prayer.day;
+                    row.appendChild(dayCell);
+
+                    const hijriCell = document.createElement('td');
+                    hijriCell.textContent = prayer.hijri;
+                    row.appendChild(hijriCell);
+
+                    const fajrCell = document.createElement('td');
+                    fajrCell.textContent = formatTime(prayer.fajr);
+                    row.appendChild(fajrCell);
+
+                    const syurukCell = document.createElement('td');
+                    syurukCell.textContent = formatTime(prayer.syuruk);
+                    row.appendChild(syurukCell);
+
+                    const dhuhrCell = document.createElement('td');
+                    dhuhrCell.textContent = formatTime(prayer.dhuhr);
+                    row.appendChild(dhuhrCell);
+
+                    const asrCell = document.createElement('td');
+                    asrCell.textContent = formatTime(prayer.asr);
+                    row.appendChild(asrCell);
+
+                    const maghribCell = document.createElement('td');
+                    maghribCell.textContent = formatTime(prayer.maghrib);
+                    row.appendChild(maghribCell);
+
+                    const ishaCell = document.createElement('td');
+                    ishaCell.textContent = formatTime(prayer.isha);
+                    row.appendChild(ishaCell);
+
+                    tableBody.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Error fetching the prayer times:', error);
+            }
+        }
+
+        // Call the function to populate the table when the page loads
+        document.addEventListener('DOMContentLoaded', populatePrayerTimes);
+    </script>
+</body>
+</html>
